@@ -93,7 +93,7 @@ class ChidoriAnimationController: NSObject, UIViewControllerAnimatedTransitionin
         
         // Rather than moving the origin of the view's frame for the animation (which is causing issues with jumpiness), just translate the view temporarily.
         // Accomplish this by finding out how far we have to translate it by creating a reference point from the center of the menu we're moving, and compare that to the center point of where we're moving it to (we're moving it to a specific coordinate, not a frame, so the center point is the same as the coordinate)
-        let translationRequired = calculateTranslationRequired(forChidoriMenuFrame: finalFrame, toDesiredPoint: chidoriMenu.summonPoint)
+        let translationRequired = calculateTranslationRequired(forChidoriMenuFrame: finalFrame, toDesiredPoint: chidoriMenu.anchorPoint)
         
         let initialAlpha: CGFloat = isPresenting ? 0.0 : 1.0
         let finalAlpha: CGFloat = isPresenting ? 1.0 : 0.0

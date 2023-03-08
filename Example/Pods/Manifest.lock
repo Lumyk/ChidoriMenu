@@ -1,0 +1,16 @@
+PODS:
+  - ChidoriMenu (0.0.0)
+
+DEPENDENCIES:
+  - ChidoriMenu (from `../`)
+
+EXTERNAL SOURCES:
+  ChidoriMenu:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ChidoriMenu: c81f91c27f4f948916f4bd333cdd26be7c86fa88
+
+PODFILE CHECKSUM: 9c9883e45c03f29157218bcdfba6c6f911d4de05
+
+COCOAPODS: 1.11.3

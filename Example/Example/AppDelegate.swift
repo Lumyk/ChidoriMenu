@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  ChidoriMenuExample
+//  Example
 //
-//  Created by Tim Oliver on 21/2/21.
+//  Created by Evegeny Kalashnikov on 08.03.2023.
 //
 
 import UIKit

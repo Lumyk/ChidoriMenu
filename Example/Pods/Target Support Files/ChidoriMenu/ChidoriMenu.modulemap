@@ -1,0 +1,6 @@
+framework module ChidoriMenu {
+  umbrella header "ChidoriMenu-umbrella.h"
+
+  export *
+  module * { export * }
+}

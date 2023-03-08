@@ -83,12 +83,9 @@ class ChidoriPresentationController: UIPresentationController {
         guard let chidoriMenu = presentedViewController as? ChidoriMenu else {
             preconditionFailure("Should only be used with ChidoriMenu")
         }
-        
-        let height = min(chidoriMenu.height(), maxHeight())
-        let menuSize = CGSize(width: ChidoriMenu.width, height: height)
-        let originatingPoint = calculateOriginatingPoint(summonPoint: chidoriMenu.summonPoint, menuSize: menuSize)
-        
-        return CGRect(origin: originatingPoint, size: menuSize)
+
+        let originatingPoint = calculateOriginatingPoint(summonPoint: chidoriMenu.anchorPoint, menuSize: chidoriMenu.size)
+        return CGRect(origin: originatingPoint, size: chidoriMenu.size)
     }
     
     func maxHeight() -> CGFloat {

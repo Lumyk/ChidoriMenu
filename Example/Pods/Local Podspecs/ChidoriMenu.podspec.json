@@ -1,0 +1,24 @@
+{
+  "name": "ChidoriMenu",
+  "version": "0.0.0",
+  "summary": "Popup menu like in iOS 14",
+  "description": "Popup menu like in iOS 14. Based on christianselig/ChidoriMenu",
+  "homepage": "https://github.com/lumyk/ChidoriMenu",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Evgeny Kalashnikov": "lumyk@me.com"
+  },
+  "source": {
+    "git": "https://github.com/lumyk/ChidoriMenu.git",
+    "tag": "0.0.0"
+  },
+  "platforms": {
+    "ios": "13.0"
+  },
+  "source_files": "Sources/**/*",
+  "swift_versions": "5.0",
+  "swift_version": "5.0"
+}
