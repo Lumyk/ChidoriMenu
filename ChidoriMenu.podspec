@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ChidoriMenu'
-  s.version          = '0.0.0'#`git describe --abbrev=0 --tags`
+  s.version          = `git describe --abbrev=0 --tags`
   s.summary          = 'Popup menu like in iOS 14'
   s.description      = 'Popup menu like in iOS 14. Based on christianselig/ChidoriMenu'
 
