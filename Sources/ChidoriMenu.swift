@@ -9,8 +9,14 @@ import UIKit
 
 open class ChidoriMenu: UIViewController {
 
+    public enum AnchorOrientation {
+        case center
+        case leading
+    }
+
     /// Where in the window the menu is being summond from
     var anchorPoint: CGPoint = .zero
+    var anchorOrientation: AnchorOrientation = .center
     
     let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .systemMaterialLight))
     private let shadowLayer = CALayer()
@@ -27,15 +33,21 @@ open class ChidoriMenu: UIViewController {
         fatalError("Not implemented! Use init(nibName:, bundle:, anchorPoint:)")
     }
 
-    public init(nibName: String, bundle: Bundle, anchorPoint: CGPoint) {
+    public init(nibName: String, bundle: Bundle, anchorPoint: CGPoint, anchorOrientation: AnchorOrientation) {
         self.anchorPoint = anchorPoint
+        self.anchorOrientation = anchorOrientation
         super.init(nibName: nibName, bundle: bundle)
         modalPresentationStyle = .custom
         transitioningDelegate = self
     }
 
-    public init(stackView: UIStackView, edgeInsets: UIEdgeInsets = .zero, anchorPoint: CGPoint) {
+    public init(stackView: UIStackView,
+                edgeInsets: UIEdgeInsets = .zero,
+                anchorPoint: CGPoint,
+                anchorOrientation: AnchorOrientation) {
+
         self.anchorPoint = anchorPoint
+        self.anchorOrientation = anchorOrientation
         super.init(nibName: nil, bundle: nil)
         modalPresentationStyle = .custom
         transitioningDelegate = self
@@ -144,7 +156,7 @@ extension ChidoriMenu: UIViewControllerTransitioningDelegate {
     }
     
     public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        let controller = ChidoriPresentationController(presentedViewController: presented, presenting: presenting)
+        let controller = ChidoriPresentationController(presentedViewController: presented, presenting: source)
         controller.transitionDelegate = self
         return controller
     }
