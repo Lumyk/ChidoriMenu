@@ -156,7 +156,7 @@ extension ChidoriMenu: UIViewControllerTransitioningDelegate {
     }
     
     public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        let controller = ChidoriPresentationController(presentedViewController: presented, presenting: source)
+        let controller = ChidoriPresentationController(presentedViewController: presented, presenting: presenting)
         controller.transitionDelegate = self
         return controller
     }
