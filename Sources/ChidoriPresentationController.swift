@@ -83,8 +83,11 @@ class ChidoriPresentationController: UIPresentationController {
         guard let chidoriMenu = presentedViewController as? ChidoriMenu else {
             preconditionFailure("Should only be used with ChidoriMenu")
         }
-
-        let originatingPoint = calculateOriginatingPoint(summonPoint: chidoriMenu.anchorPoint, menuSize: chidoriMenu.size)
+        let x = chidoriMenu.anchorOrientation == .center
+            ? chidoriMenu.anchorPoint.x
+            : (chidoriMenu.anchorPoint.x + chidoriMenu.size.width / 2)
+        let y = chidoriMenu.anchorPoint.y
+        let originatingPoint = calculateOriginatingPoint(summonPoint: CGPoint(x: x, y: y), menuSize: chidoriMenu.size)
         return CGRect(origin: originatingPoint, size: chidoriMenu.size)
     }
     
